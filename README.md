@@ -17,8 +17,9 @@ The input maildir file and output JSON files are passed as commandline arguments
 
 ## Development
 
-Questions or problems? Please post them on the [issue tracker](https://github.com/amalfra/maildir2json/issues). You can contribute changes by forking the project and submitting a pull request.
+Questions, problems or suggestions? Please post them on the [issue tracker](https://github.com/amalfra/maildir2json/issues).
 
+You can contribute changes by forking the project and submitting a pull request. Feel free to contribute :heart_eyes:
 
 UNDER MIT LICENSE
 =================
