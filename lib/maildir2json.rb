@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'mail'
-require_relative 'hash.rb'
+require_relative 'hash'
 
+# Maildir2Json is the main entry point of execution
 module Maildir2Json
   abort("\e[31mYou need to provide absolute path to input file\e[0m") if ARGV.empty?
   abort("\e[31mYou need to provide absolute path to output file\e[0m") if ARGV.length < 2
@@ -13,13 +16,13 @@ module Maildir2Json
 
   def self.run
     mail = Mail.read(INPUT_FILE)
-    data = YAML.load(mail.to_yaml)
+    data = YAML.safe_load(mail.to_yaml)
 
     data = data.to_utf8
 
     begin
       json = JSON.dump(data)
-    rescue
+    rescue StandardError
       abort("\e[31mError converting maildir file #{INPUT_FILE}\e[0m")
     end
 

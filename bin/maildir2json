@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 #  A simple script to convert maildir format file into JSON. Will accept
 #  input file in maildir format and output equivalent JSON into
@@ -8,4 +9,4 @@
 
 require 'maildir2json'
 
-Maildir2Json::run
+Maildir2Json.run
