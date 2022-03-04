@@ -13,5 +13,7 @@ jobs:
         uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
         with:
           ruby-version: ${{ matrix.ruby-version }}
+      - name: Install deps
+        run: bundle install
       - name: Linting
         run: rubocop
