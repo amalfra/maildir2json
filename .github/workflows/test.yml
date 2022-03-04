@@ -17,3 +17,5 @@ jobs:
         run: bundle install
       - name: Linting
         run: rubocop
+      - name: Spec
+        run: bundle exec rspec
