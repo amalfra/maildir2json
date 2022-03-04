@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+#  A simple script to convert maildir format file into JSON. Will accept
+#  input file in maildir format and output equivalent JSON into
+#  specified file.
+#
+#  Usage: maildir2json <full path to input file> <full path to output file>
+
+require 'maildir2json'
+
+Maildir2Json::run

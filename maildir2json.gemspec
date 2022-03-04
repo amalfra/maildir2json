@@ -10,4 +10,7 @@ Gem::Specification.new do |s|
   s.license   = 'MIT'
   s.files     = Dir.glob("{lib,bin}/**/*")
   s.require_path = 'lib'
+  s.executables = ['maildir2json']
+  s.required_ruby_version = '>= 2.6.0'
+  s.add_runtime_dependency 'mail', '~> 2.6', '>= 2.6.4'
 end
