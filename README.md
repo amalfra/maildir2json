@@ -5,15 +5,23 @@ A script to convert maildir format to JSON.
 
 ## Installation
 
-The script is written in ruby and hence you need ruby installed.
+The script is written in ruby and hence you need ruby installed. Run following command to install
+
+```sh
+gem install maildir2json
+```
 
 ## Usage
 
 The script can be used from commandline as
 
-> maildir2json.rb /home/user/maildirfile /home/user/jsonfile.json
+```sh
+maildir2json /home/user/maildirfile /home/user/jsonfile.json
+```
 
-The input maildir file and output JSON files are passed as commandline arguments. The first argument is the absolute path to your maildir format file. The second argument is absolute path to where you need the output JSON file.
+The input maildir file and output JSON files are passed as commandline arguments.
+* The first argument is the absolute path to your maildir format file.
+* The second argument is absolute path to where you need the output JSON file.
 
 ## Development
 
