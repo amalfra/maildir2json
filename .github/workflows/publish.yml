@@ -16,6 +16,9 @@ jobs:
         with:
           ruby-version: 2.6
       - run: bundle install
+      - name: Get tag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
       - name: Publish to RubyGems
         run: |
           mkdir -p $HOME/.gem
