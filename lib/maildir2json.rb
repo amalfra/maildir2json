@@ -19,7 +19,7 @@ module Maildir2Json
   def self.run
     validate_params
     mail = Mail.read(@input_file)
-    data = YAML.safe_load(mail.to_yaml)
+    data = YAML.safe_load(mail.to_yaml, [Symbol, Mail::SMTP, Mail::Body])
 
     data = data.to_utf8
 
