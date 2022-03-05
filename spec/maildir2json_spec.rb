@@ -7,36 +7,30 @@ describe Maildir2Json do
   describe '.validate_params' do
     context 'given missing params' do
       it 'errors when no params given' do
-        expect {
-          begin
-            Maildir2Json.validate_params
-          rescue SystemExit
-          end
-        }.to output(/You need to provide absolute path to input file/i).to_stderr_from_any_process
+        expect do
+          Maildir2Json.validate_params
+        rescue SystemExit # rubocop:disable Lint/SuppressedException
+        end.to output(/You need to provide absolute path to input file/i).to_stderr_from_any_process
       end
 
       it 'errors when only first param given' do
-        expect {
+        expect do
           ARGV.replace ['/my-system/testfile.maildir']
-          begin
-            Maildir2Json.validate_params
-          rescue SystemExit
-          end
-        }.to output(/You need to provide absolute path to output file/i).to_stderr_from_any_process
+          Maildir2Json.validate_params
+        rescue SystemExit # rubocop:disable Lint/SuppressedException
+        end.to output(/You need to provide absolute path to output file/i).to_stderr_from_any_process
       end
 
       it 'errors when input file given does not exists' do
-        expect {
+        expect do
           ARGV.replace ['/my-system/testfile.maildir', '/my-system/output.json']
-          begin
-            Maildir2Json.validate_params
-          rescue SystemExit
-          end
-        }.to output(/The input file you have specified does not exist!/i).to_stderr_from_any_process
+          Maildir2Json.validate_params
+        rescue SystemExit # rubocop:disable Lint/SuppressedException
+        end.to output(/The input file you have specified does not exist!/i).to_stderr_from_any_process
       end
 
       it 'passes when all good' do
-        FileUtils.rm('/tmp/testfile.maildir', :force => true)
+        FileUtils.rm('/tmp/testfile.maildir', force: true)
         ARGV.replace ['/tmp/testfile.maildir', '/my-system/output.json']
         FileUtils.touch('/tmp/testfile.maildir')
 
@@ -45,7 +39,7 @@ describe Maildir2Json do
         rescue RSpec::Expectations::ExpectationNotMetError => e
           expect(e.message).not_to include 'SystemExit'
         end
-        FileUtils.rm('/tmp/testfile.maildir', :force => true)
+        FileUtils.rm('/tmp/testfile.maildir', force: true)
       end
     end
   end
