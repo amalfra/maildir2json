@@ -1,5 +1,8 @@
 maildir2JSON
 ========
+[![GitHub release](https://img.shields.io/github/release/amalfra/maildir2json.svg)](https://github.com/amalfra/maildir2json/releases)
+![Build Status](https://github.com/amalfra/maildir2json/actions/workflows/test.yml/badge.svg?branch=main)
+[![Gem Version](https://badge.fury.io/rb/maildir2json.svg)](https://badge.fury.io/rb/maildir2json)
 
 A script to convert maildir format to JSON.
 
