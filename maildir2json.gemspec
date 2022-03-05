@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.executables = ['maildir2json']
   s.required_ruby_version = '>= 2.6.0'
   s.add_runtime_dependency 'mail', '~> 2.6', '>= 2.6.4'
+  s.add_runtime_dependency 'net-smtp'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rubocop'
 end
